@@ -7,6 +7,19 @@ function loadDoc() {
     },
     success: function(result){
       console.log('Success')
+      if(!(result.rows[0].box1 == 1 && result.rows.box2 == 1)){
+        //Enter code to send the message
+        /*$.ajax({
+          url: '',
+          type: 'GET',
+          success: function(result){
+
+          },
+          error:function(error){
+            console.log('Error ${error}')
+          }
+        }):*/
+      }
       for(var i=0;i<result.rows.length;++i)
       {
         console.log(result.rows[i]);
@@ -42,5 +55,5 @@ function loadDoc() {
       console.log('Error ${error}')
     }
 
-  })
+  });
 }
