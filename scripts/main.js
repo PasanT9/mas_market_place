@@ -7,9 +7,9 @@ function loadDoc() {
     },
     success: function(result){
       console.log('Success')
-      if(!(result.rows[0].box1 == 1 && result.rows.box2 == 1)){
+      /*if(!(result.rows[0].box1 == 1 && result.rows.box2 == 1)){
         //Enter code to send the message
-        /*$.ajax({
+        $.ajax({
           url: '',
           type: 'GET',
           success: function(result){
@@ -18,12 +18,9 @@ function loadDoc() {
           error:function(error){
             console.log('Error ${error}')
           }
-        }):*/
-      }
-      for(var i=0;i<result.rows.length;++i)
-      {
-        console.log(result.rows[i]);
-        var obj = result.rows[i];
+        }):
+      }*/
+        var obj = result.rows[result.rows.length-1];
         var box_1,box_2;
         if(obj.box1 == "1"){
           box_1 = true;
@@ -37,19 +34,17 @@ function loadDoc() {
         var dot;
         console.log(box_1 +" " +box_2);
         if(box_1 && box_2){
-          dot = "dot("+(i+1)+","+1+")";
+          dot = "dot("+(0+1)+","+1+")";
           document.getElementById(dot).className = "green";
         }
         else if(!box_1 && !box_2) {
-          dot = "dot("+(i+1)+","+3+")";
+          dot = "dot("+(0+1)+","+3+")";
           document.getElementById(dot).className = "red";
         }
         else{
-          dot = "dot("+(i+1)+","+2+")";
+          dot = "dot("+(0+1)+","+2+")";
           document.getElementById(dot).className = "yellow";
         }
-        console.log(obj);
-      }
     },
     error:function(error){
       console.log('Error ${error}')

@@ -21,8 +21,8 @@ app.route('/mas_data').get(function(req,res){
 	con.query('SELECT * FROM all_data', (err,rows) => {
 	  if(err) throw err;
 
-	  //console.log('Data received from Db:');
-	  //console.log(rows);
+	  console.log('Data received from Db:');
+	  console.log(rows);
 	  res.writeHead(200,{'Content-Type' : 'application/json', 'Access-Control-Allow-Origin':'*'});
 	 //res.json(rows);
 	  res.end(JSON.stringify({rows}));
